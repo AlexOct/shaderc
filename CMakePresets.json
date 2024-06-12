@@ -1,0 +1,54 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 14,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "common",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_TOOLCHAIN_FILE": "D:/DevEcoThrid/Huawei/Sdk/HarmonyOS-NEXT-DP2/base/native/build/cmake/ohos.toolchain.cmake"
+            }
+        },
+        {
+            "name": "HarmonyOS",
+            "displayName": "configure:HarmonyOS",
+            "binaryDir": "${sourceDir}/build/HarmonyOS",
+            "inherits": ["common"],
+            "generator": "Ninja Multi-Config",
+            "cacheVariables": {
+                "PYTHON_EXECUTABLE":"C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/CommonExtensions/Microsoft/VC/SecurityIssueAnalysis/python/python.exe",
+                "SHADERC_SPIRV_TOOLS_DIR":"D:/DevEcoThrid/shadercSupport/SPIRV-Tools",
+                "SHADERC_SPIRV_HEADERS_DIR":"D:/DevEcoThrid/shadercSupport/spirv-headers",
+                "SHADERC_GLSLANG_DIR":"D:/DevEcoThrid/shadercSupport/glslang",
+                "OHOS_ARCH": "arm64-v8a",
+                "PLATFORM": "OHOS",
+                "OHOS_STL":"c++_shared",
+                "SHADERC_SKIP_EXAMPLES":"ON",
+                "SHADERC_SKIP_INSTALL":"ON",
+                "SHADERC_SKIP_TESTS":"ON",
+                "SHADERC_ENABLE_WERROR_COMPILE":"OFF"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "ohos_Debug",
+            "configurePreset": "HarmonyOS",
+            "configuration": "Debug"
+        },
+        {
+            "name": "ohos_release",
+            "configurePreset": "HarmonyOS",
+            "configuration": "release"
+        },
+        {
+            "name": "ohos_relwithdebinfo",
+            "configurePreset": "HarmonyOS",
+            "configuration": "RelWithDebInfo"
+        }
+    ]
+}
