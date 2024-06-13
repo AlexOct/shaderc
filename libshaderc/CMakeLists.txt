@@ -94,7 +94,7 @@ target_link_libraries(shaderc_shared PRIVATE ${SHADERC_LIBS})
 #    shaderc_cpp
 #    shaderc_private)
 #
-#shaderc_combine_static_lib(shaderc_combined shaderc)
+shaderc_combine_static_lib(shaderc_combined shaderc)
 #
 #if(SHADERC_ENABLE_INSTALL)
 #  # Since shaderc_combined is defined as an imported library, we cannot use the
